@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- form태그 안에 회원가입내용 작성 버튼클릭하면 action페이지 서버에 요청 (하이퍼링크 이동)
+	 method : 데이터 전송방식 get / post 두개 사용-->
+<a href="a.jsp">하이퍼링크a.jsp</a> <!-- 값을 아무것도 가져 가지 않는다. -->
+<form action="a.jsp" method="get"> <!-- a태그와 다르게 form의 값을 가지고 간다. -->
+아이디 : <input type="text" name="id" value="아이디"><br>
+비밀번호 : <input type="password" name="pass"><br>
+자기소개 : <textarea rows="5" cols="10" name="tx">내용입력</textarea><br>
+라디오박스 : <input type="radio" name="gen" value="남">남
+		 <input type="radio" name="gen" value="여">여<br>
+체크박스 : <input type="checkbox" name="ch" value="여행">여행
+		<input type="checkbox" name="ch" value="게임">게임<br>
+목록상자 : <select name="sel">
+	<option value="목록1">목록1</option>
+	<option value="목록2">목록2</option>
+</select><br>
+<input type="file" name="f">
+<input type="hidden" name="a" value="av"> <!-- 숨겨져 있으나 값은 넘어감 -->
+<input type="submit" value="회원가입전송">
+<input type="reset" value="초기화">
+<input type="button" value="버튼"> <!-- 아무 기능이 없으므로 javascript 필요 -->
+</form>
+</body>
+</html>

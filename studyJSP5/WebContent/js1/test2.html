@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//함수 : 호출해서 사용
+	function fun1(){
+		alert('안녕1');
+		alert('안녕2');
+		alert('안녕3');
+		alert('안녕4');
+		alert('안녕5');	
+		return; //함수 호출한 곳으로 돌아감
+	}
+	function fun2(){
+		a = 40; 
+		b = 10;
+		alert(a+b);
+		alert(a-b);
+		alert(a*b);
+		alert(a/b);
+		return;
+	}
+	function fun3(a,b){
+		alert(a+b);
+		alert(a-b);
+		alert(a*b);
+		alert(a/b);
+		return;
+	}
+	function fun4(x){
+		alert(x + "원 입력");
+		alert("사이다 보냄");
+		return "사이다";
+	}
+</script>
+</head>
+<body>
+	<h1>js1/test2.html</h1>
+	<input type="button" value="버튼" onclick="fun1()">
+	<input type="button" value="사칙연산" onclick="fun2()">
+	<input type="button" value="사칙연산자동화" onclick="fun3(2,3)">
+	<input type="button" value="자판기 동전 넣고 음료수 받기" onclick="alert(fun4(500))">
+</body>
+</html>

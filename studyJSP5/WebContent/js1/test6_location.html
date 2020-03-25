@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+	alert(location.protocol);
+	alert(location.host);
+	alert(location.port);
+	alert(location.hostname);
+	alert(location.href);
+}
+function fun2(){
+	alert("test5.html이동"); //이전페이지 이동가능
+	location.href = "test5.html";
+} 
+function fun3(){
+	alert("페이지 새로고침");
+	location.reload();
+}
+function fun4(){
+	alert("test5.html불러오기"); //이전페이지 이동 불가능...
+	location.replace("test3.html");
+}
+function fun5(address){
+	alert(address + "로 이동합니다.");
+	location.href = address;
+}
+</script>
+</head>
+<body>
+	<h1>test6.html</h1>
+	<input type="button" value="주소줄 정보 저장한 변수" onclick="fun1()">
+	<input type="button" value="주소줄 내용을 test5.html변경" onclick="fun2()">
+	<input type="button" value="새로고침" onclick="fun3()">
+	<input type="button" value="페이지 불러옴" onclick="fun4()">
+	<input type="button" value="페이지 이동" onclick="fun5('test1.html')">
+	<input type="button" value="페이지 이동" onclick="fun5('test_s.html')">
+	<input type="button" value="창닫기" onclick="window.close()">
+</body>
+</html>

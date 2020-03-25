@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		// (파일명, {})
+// 		$.ajax('string1.jsp', {
+// 			// 파일 접속에 성공했을 경우  
+// 			// data 변수에 파일의 데이터를 저장
+// 			success: function (data) {
+// 				$('body').append(data);
+// 			}
+// 		});
+		// 버튼을 클릭했을 때 이벤트 발생
+		// 이벤트 : string1.jsp에서 데이터를 가져와서 div태그에 덮어서 쓰기
+		$('#btn').click(function () {
+			$.ajax('string1.jsp',{
+				success: function (data){
+					$('div').html(data);
+				}
+			})
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="버튼" id="btn">
+	<div></div>
+</body>
+</html>

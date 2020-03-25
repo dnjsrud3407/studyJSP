@@ -1,0 +1,6 @@
+<%
+//	color.jspf
+String col1 = "pink";
+String col2 = "yellow";
+String col3 = "skyblue";
+%>

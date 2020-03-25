@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+// 	alert(document.fr1.gen[0].name);
+// 	alert(document.fr1.gen[0].type);
+// 	alert(document.fr1.gen[0].value);
+// 	alert(document.fr1.gen[0].checked);
+// 	alert(document.fr1.gen[1].checked);
+	document.fr1.gen[0].focus();
+// 	document.fr1.gen[0].click();
+	document.fr1.gen[0].blur();
+}
+function fun2(){
+	if(document.fr1.gen[0].checked == false && document.fr1.gen[1].checked == false){
+		alert('라디오박스를 선택하세요.');
+		document.fr1.gen[0].focus();
+		return;
+ 	} 
+	if(document.fr1.ch[0].checked == false && document.fr1.ch[1].checked == false){
+		alert('체크박스를 선택하세요');
+		document.for1.ch[0].focus();
+		return;
+	}
+	document.forms[0].submit();
+}
+</script>
+</head>
+<body>
+<h1>js2/test4.html</h1>
+<form action="a.jsp" method="get" name="fr1">
+라디오박스 : <input type="radio" name="gen" value="남" >남
+		 <input type="radio" name="gen" value="여">여<br>
+체크박스 : <input type="checkbox" name="ch" value="여행">여행
+		<input type="checkbox" name="ch" value="게임">게임<br>
+<input type="button" value="버튼" onclick="fun1()">
+<input type="button" value="버튼" onclick="fun2()">
+</form>
+</body>
+</html>

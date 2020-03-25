@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#btn2').click(function () {
+			$('table').html('<tr><td>번호</td><td>이름</td><td>비밀번호</td><td>제목</td></tr>');
+			$.getJSON('json2.jsp', function (d) {
+				// 배열 접근
+				$.each(d, function (index, item) {
+					$('table').append('<tr><td>' + item.num + '</td><td>' + item.name + '</td></tr>' + item.pass + '</td></tr>' + item.subject + '</td></tr>');
+				});
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="버튼" id="btn2">
+	<table border="1">
+		<tr><td>번호</td><td>이름</td><td>비밀번호</td><td>제목</td></tr>
+	</table>	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		// btn을 클릭했을 때
+		$('#btn').click(function () {
+			var idValue = $('#id').val();
+			// 아이디 비어있으면 alert('아이디 입력하세요') 후 포커스
+			if(idValue == ''){
+				alert('아이디 입력하세요');
+				$('#id').focus();
+				return false;	
+			}
+			
+			// string3.jsp가서 아이디 중복체크를 해서 출력 결과를 가져오기
+			$.ajax('string3.jsp', {
+				data: {id:idValue},
+				success: function (d) {
+					$('div').html(d);	// div 덮어서 씀
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	아이디 : <input type="text" name="id" id="id">
+	<input type="button" value="아이디중복체크" id="btn">
+	<div></div>
+</body>
+</html>

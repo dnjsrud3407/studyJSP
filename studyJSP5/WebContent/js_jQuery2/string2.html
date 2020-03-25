@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		// name과 age 값을 string2.jsp 에 넘겨서
+		// string2.jsp에서 처리한 결과를 가져오기
+// 		$.ajax('string2.jsp', {
+// 			// name과 age는 parameter가 됨
+// 			data: {name:'홍길동', age:21},
+// 			success: function (d) {
+// 				// body 태그에 추가
+// 				$('body').append(d);
+// 			}
+// 		});
+		
+		// 버튼1을 클릭했을 때 name:'이순신', age:30 을 string2.jsp 에 들고 가서
+		// 처리한 결과를 가져오기
+		$('#btn1').click(function () {
+			$.ajax('string2.jsp',{
+				data: {name:'이순신', age:30},
+				success: function (d) {
+					$('div').html(d);
+				}
+			});
+		});
+		
+		// 버튼1을 클릭했을 때 name 태그 값, age 태그 값 을 string2.jsp 에 들고 가서
+		// 처리한 결과를 가져오기
+		$('#btn2').click(function () {
+			// input 태그로 부터 값 가져오기
+			var nValue = $('#name').val();
+			var aValue = $('#age').val();
+			$.ajax('string2.jsp', {
+				data: {name:nValue, age:aValue},
+				success: function (d) {
+					$('div').html(d);
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="버튼1" id="btn1"><br><br>
+	이름 : <input type="text" name="name" id="name"><br>
+	나이 : <input type="text" name="age" id="age"><br>
+	<input type="button" value="버튼2" id="btn2">
+	<div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

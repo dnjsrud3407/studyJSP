@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+	alert(document.fr1.id.name);
+	alert(document.fr1.id.type);
+	alert(document.fr1.id.value);
+	document.fr1.id.focus();
+	document.fr1.id.blur();
+	document.fr1.id.select();
+}
+function fun2(){
+// 	alert(document.fr1.id.value);
+	//alert(document.fr1.id.value.length);
+	if(document.fr1.id.value.length != 4){
+		alert('아이디의 길이는 4자리입니다.');
+		document.fr1.id.focus();
+		return;
+	}
+	if (document.fr1.pass.value.length < 4 || document.fr1.pass.value.length > 7) {
+		alert('비밀번호는 4자에서 7자 사이로 입력하세요');
+		document.fr1.pass.focus();
+		return;
+ 	}
+// 	if(document.fr1.id.value == ""){
+// 		alert('아이디 입력하세요');
+// 		document.fr1.id.focus();
+// 		return;
+// 	}
+// 	if (document.fr1.pass.value == "") {
+// 		alert('비밀번호를 입력하세요');
+// 		document.fr1.pass.focus();
+// 		return;
+// 	}
+	if (document.fr1.tx.value == "") {
+		alert('자기소개를 입력하세요');
+		document.fr1.tx.focus();
+		return;
+	}
+	document.fr1.submit();		
+	return;
+}
+</script>
+</head>
+<body>
+<form action="a.jsp" method="get" name="fr1">
+아이디 : <input type="text" name="id" value="아이디"><br>
+비밀번호 : <input type="password" name="pass"><br>
+자기소개 : <textarea rows="5" cols="10" name="tx"></textarea><br>
+<input type="button" value="버튼" onclick="fun1()">
+<input type="button" value="텍스트상자제어" onclick="fun2()">
+</form>
+</body>
+</html>

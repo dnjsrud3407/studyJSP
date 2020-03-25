@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//fun1() 안녕 자바스크립트 출력 리턴값없음
+	function fun1(){
+		alert('안녕 자바스크립트');
+		return;
+	}
+	//fun2() 두 수를 받아서 합을 구해서 출력 리턴값없음
+	function fun2(a,b){
+		alert(a+b);
+		return;
+	}
+	//fun3() 하나의 수를 받아서 5x+10 , 결과값을 리턴
+	function fun3(x){
+		return 5*x+10;
+	}
+	//fun4() 반지름을 받아서 원의 면적을 구하기, 결과값을 리턴
+	function fun4(r){
+		return 3.14*r*r;
+	}
+</script>
+</head>
+<body>
+	<h1>js1/test2.html</h1>
+	<input type="button" value="안녕 자바스크립트" onclick="fun1()">
+	<input type="button" value="두 수의 합" onclick="fun2(5,7)">
+	<input type="button" value="5x+10" onclick="alert(fun3(5))">
+	<input type="button" value="원의 면적 구하기" onclick="alert(fun4(5))">
+</body>
+</html>

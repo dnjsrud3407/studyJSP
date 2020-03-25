@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+	alert(document.fr1.sel.name);
+	alert(document.fr1.sel.type);
+	alert(document.fr1.sel.length);
+	alert(document.fr1.sel.selectedIndex);
+	alert(document.fr1.sel.options[0].value);
+	alert(document.fr1.sel.options[0].text);
+	alert(document.fr1.sel.options[0].selected);
+	document.fr1.sel.focus();
+}
+function fun2(){
+	if(document.fr1.sel.selectedIndex == 0){
+		alert('목록상자를 선택하세요.');
+		document.fr1.sel.focus();
+		return;
+	}
+ 	document.fr1.submit();
+}
+</script>
+</head>
+<body>
+<h1>js2/test5.html</h1>
+<form action="a.jsp" method="get" name="fr1"> <!-- a태그와 다르게 form의 값을 가지고 간다. -->
+목록상자 : <select name="sel">
+	<option value="">목록을 선택하세요.</option>
+	<option value="목1">목록1</option>
+	<option value="목2">목록2</option>
+</select><br>
+<input type="button" value="버튼" onclick="fun1()"> 
+<input type="button" value="목록상자제어" onclick="fun2()"> 
+</form>
+</body>
+</html>

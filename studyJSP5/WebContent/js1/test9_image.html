@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1() {
+	alert(document.images[0].name);
+	alert(document.images[0].src);
+	alert(document.images[0].width);
+	alert(document.images[0].height);
+}
+function fun2() {
+	document.images[0].width = 400;
+	document.images[0].height = 350;
+	document.images[0].border = 10;
+	document.images[0].src = "5.jpg";
+}
+function fun3() {
+	document.images[1].src = "4.jpg";
+	document.images[1].border = 5;
+}
+function fun4() {
+	alert("세번째 이미지 클릭")
+	document.images[2].src = "4.jpg";
+}
+function fun5() {
+	document.images[2].src = "5.jpg";
+}
+function fun6() {
+	document.images[2].src = "3.jpg";
+}
+function fun7() {
+	document.img4.src = "5.jpg";
+}
+function fun8() {
+	document.img4.src = "4.jpg";
+}
+</script>
+</head>
+<body>
+<h1>js1/test9.html</h1>
+<img src="1.jpg" width="180" height="130" name="img1">
+<input type="button" value="이미지정보" onclick="fun1()">
+<input type="button" value="이미지정보변경" onclick="fun2()"><br>
+<img src="2.jpg" name="img2">
+<input type="button" value="두번째 이미지정보변경" onclick="fun3()"><br>
+<img src="3.jpg" name="img3" onclick="fun4()" onmouseover="fun5()" onmouseout="fun6()"><br>
+<img src="4.jpg" name="img4" onmouseover="fun7()" onmouseout="fun8()">
+
+</body>
+</html>

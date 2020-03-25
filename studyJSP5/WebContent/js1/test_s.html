@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(x,y){
+	return x*y*3.14;	
+}
+function fun2(){
+	r = confirm("확인하시겠습니까?");
+	if (r) {
+		alert("확인완료");
+	} else{
+		alert("취소");
+	}
+}
+//값을 입력읇 받아서
+//문자이면 문자 그대로 출력
+//숫자이면 숫자+100 출력
+function fun3(){
+	str = prompt("값을 입력하세요","입력창");
+	if (isNaN(str)) {
+		alert(str);
+	} else {
+		alert(parseInt(str)+100);
+	}
+}
+function fun4(){
+	window.open("test6.html","","width=600,height=600,left=200,top=200,scrollbars=yes,resizable=yes");
+}
+function fun5(){
+	alert("test6.html로 이동");
+	location.href = "test6.html";
+}
+function fun6(){
+	location.replace("test6.html");
+}
+function fun7(address){
+	alert(address + "로 이동");
+	location.href = address;
+}
+</script>
+</head>
+<body>
+	<input type="button" value="반지름구하기" onclick="alert(fun1(4,4))">
+	<input type="button" value="confirm" onclick="fun2()">
+	<input type="button" value="prompt" onclick="fun3()"> <br>
+	<input type="button" value="창닫기" onclick="window.close()">
+	<input type="button" value="창열기" onclick="fun4()"> <br>
+	<input type="button" value="새로고침" onclick="location.reload()">
+	<input type="button" value="host값" onclick="alert(location.host)">
+	<input type="button" value="hostname값" onclick="alert(location.hostname)">
+	<input type="button" value="test6.html로 이동" onclick="fun5()">
+	<input type="button" value="test6.html불러오기" onclick="fun6()">
+	<input type="button" value="test_s2.html로 이동" onclick="fun7('test_s2.html')">
+</body>
+</html>

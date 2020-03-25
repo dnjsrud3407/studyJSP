@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="login" method="post" enctype="utf-8">
+		<p>name : <input type="text" name="name"></p>
+		<p>password : <input type="password" name="password"></p>
+		<p>
+			gender : <input type="radio" name="gender" value="M"> Man
+				 	<input type="radio" name="gender" value="W"> Woman
+		</p>
+		<p>
+			hobby : 
+			<input type="checkbox" name="hobby" value="computer" checked="checked"> computer
+			<input type="checkbox" name="hobby" value="travel" checked="checked"> travel
+			<input type="checkbox" name="hobby" value="coffee"> coffee
+		</p>
+		<p>
+			residence
+			<select name="residence">
+				<option value="서울" selected="selected">서울</option>
+				<option value="부산">부산</option>
+				<option value="경주">경주</option>
+				<option value="대구">대구</option>
+			</select>
+		</p>
+		<input type="submit">
+	</form>
+</body>
+</html>

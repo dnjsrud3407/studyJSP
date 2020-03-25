@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		// xml 방식 : 확장된 html 방식
+// 		$.ajax('xml.jsp',{
+// 			success: function (d) {
+//				// 행 가지고 오기
+// 				$(d).find('person').each(function () {
+//					// 열 가지고 오기
+// 					var name = $(this).find('name').text();
+// 					var gender = $(this).find('gender').text();
+// 					// body 태그 뒷부분에 추가
+// 					$('body').append(name + ' : ' + gender + '<br>');
+// 				});
+// 			}
+// 		});
+		$('#btn').click(function () {
+			$.ajax('xml.jsp', {
+				success: function (d) {
+					$(d).find('person').each(function () {
+						var name = $(this).find('name').text();
+						var gender = $(this).find('gender').text();
+						// table에 추가
+						$('table').append('<tr><td>' + name + '</td><td>' + gender + '</td></tr>');
+					});
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="버튼" id="btn">
+	<table border="1">
+		<tr><td>이름</td><td>성별</td></tr>
+	</table>
+</body>
+</html>

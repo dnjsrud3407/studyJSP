@@ -1,0 +1,4 @@
+javascript 버튼 onclick에 넣어보기
+
+함수 만들어서 사용해보기
+ 

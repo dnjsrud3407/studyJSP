@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+// 		$.getJSON('json1.jsp', function (d) {
+// 			$.each(d, function (index,item) {
+// 				// body 뒷부분 추가 name, gender <br>
+// 				var name = item.name;
+// 				var gender = item.gender;
+// 				$('body').append(name + " : " + gender + "<br>");
+// 			});
+// 		});
+		$('#btn').click(function () {
+			$('table').html('<tr><td>이름</td><td>성별</td></tr>');
+			$.getJSON('json1.jsp', function (d) {
+				$.each(d, function (index,item) {
+					var name = item.name;
+					var gender = item.gender;
+					$('table').append('<tr><td>' + name + '</td><td>' + gender + '</td></tr>');
+				});
+			});
+			// $(this).unbind();
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="버튼" id="btn">
+	<table border="1">
+		<tr><td>이름</td><td>성별</td></tr>
+	</table>
+</body>
+</html>

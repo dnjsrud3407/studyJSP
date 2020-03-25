@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+	alert(document.forms[0].name);
+	alert(document.forms[0].action);
+	alert(document.forms[0].method);
+// 	document.fr1.reset();
+	document.forms[0].submit();
+}
+function fun2(){
+	document.fr1.action = "b.jsp";
+	document.fr1.method = "post";
+	document.fr1.submit();
+}
+function fun3(a){
+	if(a === 'basket'){
+		document.fr1.action = 'c.jsp';
+		document.fr1.method = 'get';
+	}else{
+		document.fr1.action = 'd.jsp';
+		document.fr1.method = 'post';	
+	}
+	document.fr1.submit();
+}
+</script>
+</head>
+<body>
+<form action="a.jsp" method="get" name="fr1">
+	아이디 : <input type="text" name="id"><br>
+	<input type="button" value="버튼" onclick="fun1()">
+	<input type="button" value="버튼2" onclick="fun2()">
+	<input type="button" value="장바구니" onclick="fun3('basket')">
+	<input type="button" value="바로구매" onclick="fun3('buy')">
+</form>
+</body>
+</html>

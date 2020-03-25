@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function enter(){
+	if(document.getElementById('name').value == "") {
+		alert('이름을 입력하세요');
+		document.getElementById('name').focus();
+		return false;
+	}
+	if(document.getElementById('f_num').value.length != 6) {
+		alert('주민등록번호 앞자리는 6자리 입니다.');
+		document.getElementById('f_num').focus();
+		return false;
+	}
+	if(document.getElementById('b_num').value.length != 7) {
+		alert('주민등록번호 뒷자리는 7자리 입니다.');
+		document.getElementById('b_num').focus();
+		return false;
+	}
+	if(document.getElementById('id').value.length < 4 ||
+	   document.getElementById('id').value.length > 10) {
+		alert('회원 ID의 길이는 4 ~ 10자 입니다.');
+		document.getElementById('id').focus();
+		return false;
+	}
+	if(document.getElementById('pw').value.length < 4 ||
+	   document.getElementById('pw').value.length > 10) {
+		alert('비밀번호의 길이는 4 ~ 10자 입니다.');
+		document.getElementById('pw').focus();
+		return false;
+	}
+	if(document.getElementById('pw').value != 
+	   document.getElementById('confirm_pw').value) {
+		alert('비밀번호가 일치하지 않습니다.');
+		document.getElementById('pw').focus();
+		return false;
+	}
+	if(document.getElementById('tel').value == "") {
+		alert('전화번호를 입력하세요');
+		document.getElementById('tel').focus();
+		return false;
+	}
+	if(document.getElementById('sort').selectedIndex == 0){
+		alert('회원분류를 선택하세요.');
+		document.getElementById('sort').focus();
+		return;
+	}
+}
+function confirm_id(){
+	alert('중복확인완료');
+}
+function search(){
+	window.open("test2.html","w_test2",
+    "width=600,height=600,left=200,top=200,scrollbars=yes,resizable=yes");
+}
+</script>
+</head>
+<body>
+<h4>Registration</h4>
+회원가입양식
+<form name="fr" method="post">
+	<p>
+		* 표시는 반드시 입력하셔야 합니다.<br>
+		* 이름 <input type="text" name="name" id="name"><br><br>
+	</p>
+	<p>
+		* 주민등록번호
+		<input type="text" name="f_num" id="f_num"> -
+		<input type="password" name="b_num" id="b_num"><br>
+		* 회원 ID
+		<input type="text" name="id" id="id">
+		<input type="button" value="중복확인" onclick="confirm_id()"><br><br>
+	</p>
+	<p>
+		* 비밀번호 <input type="password" name="pw" id="pw"><br>
+		* 비밀번호확인 <input type="password" name="pw" id="confirm_pw"><br>
+		E-mail <input type="text" name="email"><br>
+		* 전화번호 <input type="text" name="tel" id="tel"><br>
+		핸드폰번호 <input type="text" name="phone"><br>
+		우편번호
+		<input type="text" name="f_address"> -
+		<input type="text" name="b_address">
+		<input type="button" value="검색" onclick="search()"><br>
+		<input type="text" name="address_b1"><br><br>
+		상세 주소 <input type="text" name="address_b2">
+	</p>
+	<p>
+		* 회원분류
+		<select name="sort" id="sort">
+			<option value="">선택해주십시오</option>
+			<option value="준회원">준회원</option>
+			<option value="회원">회원</option>
+			<option value="특별회원">특별회원</option>
+		</select>
+	</p>
+	<p>
+		<input type="button" value="가입" onclick="enter()">
+		<input type="button" value="취소">
+	</p>
+</form>
+</body>
+</html>

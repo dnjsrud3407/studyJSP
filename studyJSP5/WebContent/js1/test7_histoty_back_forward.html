@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+	alert(history.length);
+}
+function fun2(){
+	alert("뒤로가기");
+	history.back();
+}
+function fun3(){
+	history.forward();
+}
+</script>
+</head>
+<body>
+	<h1>js1/test7.html</h1>
+	<input type="button" value="방문기록 갯수" onclick="fun1()">
+	<input type="button" value="뒤로가기" onclick="fun2()"> 
+	<input type="button" value="앞으로가기" onclick="fun3()"><br>
+</body>
+</html>

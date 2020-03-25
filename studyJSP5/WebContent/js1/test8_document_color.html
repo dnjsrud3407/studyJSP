@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+	alert(document.title);
+	document.title = "Hi, Hello";
+	alert("document.title : " + document.title);
+	alert("document.bgColor : " + document.bgColor);
+	alert("document.fgColor : " + document.fgColor);
+	document.bgColor = "skyblue";
+	document.fgColor = "white";
+}
+function fun2() {
+	document.bgColor = "gray";
+	document.fgColor = "skyblue";
+}
+function fun3(color) {
+	document.bgColor = color;
+}
+document.write("<h1>document 내용 출력</h1>");
+</script>
+</head>
+<body>
+	<h1>js1/test8.html</h1>
+	<input type="button" value="문서정보" onclick="fun1()">
+	<input type="button" value="문서배경색, 글자색 변경" onclick="fun2()">
+	<input type="radio" name="col" value="pink" onclick="fun3('pink')">pink
+	<input type="radio" name="col" value="yellow" onclick="fun3('yellow')">yellow
+	<input type="radio" name="col" value="black" onclick="fun3('green')">green
+</body>
+</html>

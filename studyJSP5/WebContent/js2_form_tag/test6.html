@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1(){
+	if(document.fr.fid.value == "") {
+		alert('아이디를 입력하세요');
+		document.fr.fid.focus();
+		return;
+	}
+	if(document.fr.fpass.value == "") {
+		alert('비밀번호를 입력하세요');
+		document.fr.fpass.focus();
+		return;
+	}
+	var a = document.fr.intor.value;
+	if(a == "" || a == "내용입력") {
+		alert('자기소개를 입력하세요');
+		document.fr.intor.value = "";
+		document.fr.intor.focus();
+		return;
+	}
+	if(document.fr.gender[0].checked == false && document.fr.gender[1].checked == false) {
+		alert('성별을 선택하세요');
+		document.fr.gender[0].focus();
+		return;
+	}
+	if(document.fr.hob[0].checked == false && document.fr.hob[1].checked == false && document.fr.hob[2].checked == false) {
+		alert('취미를 선택하세요');
+		document.fr.hob[0].focus();
+		return;
+	}
+	if(document.fr.grade.selectedIndex == 0){
+		alert('학년을 선택하세요');
+		document.fr.grade.focus();
+		return;
+	}
+	document.fr.submit();
+}
+</script>
+</head>
+<body>
+<form action="a.jsp" method="get" name="fr"> <!-- a태그와 다르게 form의 값을 가지고 간다. -->
+아이디 : <input type="text" name="fid"><br>
+비밀번호 : <input type="password" name="fpass"><br>
+자기소개 : <textarea rows="5" cols="10" name="intor">내용입력</textarea><br>
+성별 : <input type="radio" name="gender" value="남">남
+	 <input type="radio" name="gender" value="여">여<br>
+취미 : <input type="checkbox" name="hob" value="여행">여행
+     <input type="checkbox" name="hob" value="게임">게임
+	 <input type="checkbox" name="hob" value="독서">독서<br>
+학년 : <select name="grade">
+	<option value="">학년을 선택하세요</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+</select><br>
+<input type="button" value="회원가입" onclick="fun1()"> <!-- 아무 기능이 없으므로 javascript 필요 -->
+</form>
+</body>
+</html>
